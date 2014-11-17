@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Date Test Page</title>
+    <script>
+     function DateSelect()
+     {
+        var selecteddate = document.getElementById("selecteddate").value;
+        document.getElementById("mydate").innerHTML = selecteddate;
+     }
+     function AddDate()
+     {
+        var now = new Date(document.getElementById("selecteddate").value);
+        var interval = Number(document.getElementById("dayinterval").value);
+        document.getElementById("display").innerHTML = now.toDateString(now.setDate(now.getDate() + interval +1));
+     }
+     function DaySelect()
+     {
+        document.getElementById("selecteddays").value = document.getElementById("dayinterval").value;
+     }
+    </script>
+</head>
+
+<body>
+    <!--<form>
+        <input type="text" id="selecteddate" title="A valid Date in xx/xx/xxxx form." pattern="^(((((((0?[13578])|(1[02]))[\.\-/]?((0?[1-9])|([12]\d)|(3[01])))|(((0?[469])|(11))[\.\-/]?((0?[1-9])|([12]\d)|(30)))|((0?2)[\.\-/]?((0?[1-9])|(1\d)|(2[0-8]))))[\.\-/]?(((19)|(20))?([\d][\d]))))|((0?2)[\.\-/]?(29)[\.\-/]?(((19)|(20))?(([02468][048])|([13579][26])))))$">
+        <input type="submit" onclick="DateSelect()">
+        <label id="mydate">Display date here.</label>
+    </form>-->
+    <input type="date" id="selecteddate">
+    <label id="mydate">Display date here.</label>
+    <br>
+    <label id="display">Display results</label>
+    <br>
+    <input type="number" id="dayinterval">
+    <button onclick="AddDate()">Add Date</button>
+
+</body>
+</html>
